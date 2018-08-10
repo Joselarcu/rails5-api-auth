@@ -15,13 +15,13 @@ class MessagesController < ApplicationController
 
   # POST /messages
   def create
-    @message = Message.new(message_params)
+      @message = Message.new(message_params)
 
-    if @message.save
-      render json: @message, status: :created, location: @message
-    else
-      render json: @message.errors, status: :unprocessable_entity
-    end
+      if @message.save
+        render json: @message, status: :created, location: @message
+      else
+        render json: @message.errors, status: :unprocessable_entity
+      end
   end
 
   # PATCH/PUT /messages/1
